@@ -4,7 +4,7 @@
   "description": "byteworks",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run start backend",
     "test": "jest"
   },
   "repository": {
