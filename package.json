@@ -4,9 +4,7 @@
   "description": "byteworks",
   "main": "server.js",
   "scripts": {
-     "prestart-backend": "cd backend && npm install",
-    "start": "npm run start server.js",
-    "start-backend": "cd backend && npm start server.js",
+    "start": "node server.js",
     "test": "jest"
   },
   "repository": {
