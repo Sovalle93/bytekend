@@ -1,0 +1,25 @@
+{
+  "name": "byteworks-v1",
+  "version": "1.0.0",
+  "description": "byteworks",
+  "main": "server.js",
+  "scripts": {
+    "prestart-byteworks-api": "cd byteworks-api && npm install",
+    "prestart-bytewors-web": "cd byteworks-web && npm install",
+    "start": "npm run start-byteworks-api && npm run start-byteworks-web",
+    "start-byteworks-api": "cd byteworks-api && npm start",
+    "start-byteworks-web": "cd byteworks-web && npm start",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sovalle93/byteworks-v1"
+  },
+  "keywords": [],
+  "author": "Santiago_Ovalle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sovalle93/byteworks-v1"
+  },
+  "homepage": "https://github.com/Sovalle93/byteworks-v1"
+}
