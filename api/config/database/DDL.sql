@@ -13,8 +13,8 @@ CREATE TABLE users (
 );
 
 CREATE TABLE business (
-  id SERIAL,
-  firstname VARCHAR(255) NOT NULL PRIMARY KEY,,
+  id SERIAL PRIMARY KEY,,
+  firstname VARCHAR(255) NOT NULL,
   email VARCHAR(50) NOT NULL UNIQUE,
   password VARCHAR(60) NOT NULL,
   role VARCHAR(25) NOT NULL,
