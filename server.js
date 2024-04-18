@@ -1,8 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { logger } from "logger-express";
-import { fileURLToPath } from 'url';
-import path from "path";
+
 
 import registerBusinessRoutes from "./api/config/routes/registerBusinessRoutes.js";
 import registerUserRoutes from "./api/config/routes/registerUserRoutes.js";
@@ -14,8 +13,7 @@ import viewProfileRoutes from "./api/config/routes/viewProfileRoutes.js";
 import deleteJobRoutes from "./api/config/routes/deleteJobRoutes.js";
 import seeJobRoutes from "./api/config/routes/seeJobRoutes.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,9 +34,6 @@ app.use("/", viewProfileRoutes);
 app.use("/", deleteJobRoutes);
 app.use("/", seeJobRoutes);
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
 
