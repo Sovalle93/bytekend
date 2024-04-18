@@ -2,15 +2,18 @@ import pool from "../../config/database/connectionDB.js";
 
 const lookJobs = async (loggedInUserEmail) => {
     try {
+        console.log('Looking for jobs of user with email:', loggedInUserEmail);
         const lookJobsQuery = `
-            SELECT j.*
+            SELECT j.*, b.firstname AS business_name
             FROM jobs j
-            JOIN business b ON j.business = b.firstname
+            JOIN business b ON j.business_id = b.id
             WHERE b.email = $1
         `;
+        console.log('Executing query:', lookJobsQuery);
         const result = await pool.query(lookJobsQuery, [loggedInUserEmail]);
         const jobs = result.rows;
-        return { success: true, jobs };
+        console.log('Found jobs:', jobs);
+        return jobs;
     } catch (error) {
         console.error('Error querying jobs:', error);
         const errorMessage = error.message || "An error occurred while fetching jobs.";
@@ -19,6 +22,7 @@ const lookJobs = async (loggedInUserEmail) => {
 };
 
 export { lookJobs };
+
 
 
 
