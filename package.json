@@ -35,13 +35,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sovalle93/byteworks-v1"
+    "url": "git+https://github.com/Sovalle93/bytekend"
   },
   "keywords": [],
   "author": "Santiago_Ovalle",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sovalle93/byteworks-v1"
+    "url": "https://github.com/Sovalle93/bytekend"
   },
-  "homepage": "https://github.com/Sovalle93/byteworks-v1"
+  "homepage": "https://github.com/Sovalle93/bytekend"
 }
