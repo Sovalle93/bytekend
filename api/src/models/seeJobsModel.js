@@ -3,9 +3,10 @@ import pool from "../../config/database/connectionDB.js";
 const lookJobs = async (loggedInUserEmail) => {
     try {
         const lookJobsQuery = `
-            SELECT * 
-            FROM jobs 
-            WHERE business IN (SELECT id FROM business WHERE email = $1)
+            SELECT j.*
+            FROM jobs j
+            JOIN business b ON j.business = b.firstname
+            WHERE b.email = $1
         `;
         const result = await pool.query(lookJobsQuery, [loggedInUserEmail]);
         const jobs = result.rows;
