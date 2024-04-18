@@ -2,8 +2,8 @@ import { lookJobs } from "../models/seeJobsModel.js";
 
 const lookJobsController = async (req, res) => {
     try {
-        const { success, jobs, error } = await lookJobs();
-
+        const loggedInUserEmail = req.userEmail;
+        const { success, jobs, error } = await lookJobs(loggedInUserEmail);
         if (success) {
             res.status(200).json({ success: true, jobs });
         } else {
