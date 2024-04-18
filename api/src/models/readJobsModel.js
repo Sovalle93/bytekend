@@ -2,7 +2,7 @@ import pool from "../../config/database/connectionDB.js";
 
 const readJob = async (filters = {}) => {
   try {
-    const selectClause = "SELECT id, business, role, skill, service";
+    const selectClause = "SELECT id, business_id, role, skill, service";
     const { role, skill, service } = filters;
 
     let whereClause = "";
