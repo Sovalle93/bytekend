@@ -7,8 +7,8 @@ const createJobs = async (business, role, skill, service) => {
         }
 
         const insertJobsQuery = `
-            INSERT INTO jobs (business, role, skill, service)
-            VALUES ($1, $2, $3, $4)
+            INSERT INTO jobs (business_id, role, skill, service)
+            VALUES ((SELECT id FROM business WHERE firstname = $1), $2, $3, $4)
             RETURNING *
         `;
 
