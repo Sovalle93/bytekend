@@ -18,7 +18,6 @@ import seeJobRoutes from "./api/config/routes/seeJobRoutes.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(express.json());
 app.use(cors());
