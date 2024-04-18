@@ -12,7 +12,7 @@ import readJobRoutes from "./api/config/routes/readJobRoutes.js";
 import viewProfileRoutes from "./api/config/routes/viewProfileRoutes.js";
 import deleteJobRoutes from "./api/config/routes/deleteJobRoutes.js";
 import seeJobRoutes from "./api/config/routes/seeJobRoutes.js";
-
+import getAllBusinessRoutes from "./api/config/routes/getAllBusinessRoutes.js"
 
 
 const app = express();
@@ -32,7 +32,7 @@ app.use("/", readJobRoutes);
 app.use("/", viewProfileRoutes);
 app.use("/", deleteJobRoutes);
 app.use("/", seeJobRoutes);
-
+app.use("/", getAllBusinessRoutes);
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
 
